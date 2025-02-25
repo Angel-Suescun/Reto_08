@@ -1,24 +1,3 @@
-# Reto #08
-
-
-## Iterador Orden Cliente
-# Sistema de Gestión de Menús y Órdenes
-
-En este reto se implementa un sistema para gestionar menús y órdenes en un restaurante. Incluye una clase `Order` que permite crear órdenes, aplicar descuentos y promociones,  
-y un iterador para recorrer los elementos de una orden.  
-
-## 📂 Estructura del Proyecto
-
-El proyecto está organizado en las siguientes clases principales:
-
-- **`MenuItem`**: Clase base que representa un artículo del menú con un nombre y un precio.
-- **`Order`**: Clase que representa una orden realizada por un cliente.  
-  Permite agregar artículos, aplicar descuentos y calcular el total.
-- **`OrderIterator`**: Clase que implementa un iterador para recorrer los artículos de una orden.
-
-## 💻 Código Principal
-```python
-
 import random
 
 
@@ -62,7 +41,9 @@ class Order:
     def calculate_total(self) -> float:
         """Calcula el total de la orden aplicando el descuento."""
         total = sum(self.items.values())
+        print(total)
         total -= total * self.discount_percentage  # Aplica descuento
+        print(total)
         return total
 
     def promos(self) -> None:
@@ -248,5 +229,3 @@ for index, item  in enumerate(cliente2):
 print("\n\n---Total de la orden 2---")
 suma = sum(cliente2.items[item] for item in cliente2)
 print(f"Total: {suma:,} pesos, descuento aplicado: {cliente2.discount_percentage * 100}%, total con descuento: {cliente2.calculate_total():,} pesos")
-
-```
